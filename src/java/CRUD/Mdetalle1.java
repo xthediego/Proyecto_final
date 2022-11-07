@@ -19,22 +19,6 @@ public class Mdetalle1 {
     
     public Mdetalle1(){}
 
-    /*public Mdetalle1(int id_ventas, int nofactura, int id_cliente, int id_empleado, String serie, String fechafactura, String fechaingreso, int id_venta_detalle, int id_venta, int id_producto, int precio_unitario, int cantidad) {
-        this.id_ventas = id_ventas;
-        this.nofactura = nofactura;
-        this.id_cliente = id_cliente;
-        this.id_empleado = id_empleado;
-        this.serie = serie;
-        this.fechafactura = fechafactura;
-        this.fechaingreso = fechaingreso;
-        this.id_venta_detalle = id_venta_detalle;
-        this.id_venta = id_venta;
-        this.id_producto = id_producto;
-        this.precio_unitario = precio_unitario;
-        this.cantidad = cantidad;
-        
-    }*/
-    
 
     public int getId_ventas() {
         return id_ventas;
@@ -201,7 +185,27 @@ public class Mdetalle1 {
          return retorno;
      }
      
-     
+    //**********************************codigo de eliminar
+       public int delete(){
+         int retorno = 0;
+        try{
+            PreparedStatement parametro;
+            
+            cn = new conexion();
+            cn.abrir_conexion();
+            String query = "delete from ventas  where id_ventas=?;";
+            parametro = (PreparedStatement)cn.conexionBD.prepareStatement(query);
+
+            parametro.setInt(1,getId_ventas());
+            int executar = parametro.executeUpdate();
+            retorno = executar;
+            cn.close_conexion();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }
+        return retorno;
+    
+    } 
      
      
      
@@ -254,10 +258,10 @@ public class Mdetalle1 {
             
             cn = new conexion();
             cn.abrir_conexion();
-            String query = "update ventas set id_venta=?,id_producto=?,cantidad=?,precio_unitario=? where id_venta_detalle=?";
+            String query = "update venta_detalle set id_ventas=?,id_producto=?,cantidad=?,precio_unitario=? where id_venta_detalle=?";
             parametro = (PreparedStatement)cn.conexionBD.prepareStatement(query);
             
-            parametro.setInt(1,getId_venta());
+            parametro.setInt(1,getId_ventas());
             parametro.setInt(2,getId_producto());
             parametro.setInt(3,getCantidad());
             parametro.setInt(4,getPrecio_unitario());        
@@ -273,9 +277,30 @@ public class Mdetalle1 {
          return retorno;
      }
      
-     
+      public int delete1(){
+         int retorno = 0;
+     try{
+            PreparedStatement parametro;
+            
+            cn = new conexion();
+            cn.abrir_conexion();
+            String query = "delete from venta_detalle  where id_venta_detalle=?;";
+            parametro = (PreparedStatement)cn.conexionBD.prepareStatement(query);
+
+            parametro.setInt(1,getId_ventas());
+            int executar = parametro.executeUpdate();
+            retorno = executar;
+            cn.close_conexion();
+        }catch(SQLException ex){
+            System.out.println(ex.getMessage());
+        }
+        return retorno;
+    
+    } 
     
     
+      
+      
     
      public HashMap txt_clientes(){
         HashMap<String,String> dropp = new HashMap();

@@ -34,6 +34,7 @@
         
         
         <h1>FORMULARIO proveedores</h1>  
+        <a href="dinamico.jsp">redireccionar a menu</a> 
 
                 <div class="container">
 

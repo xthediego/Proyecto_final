@@ -19,21 +19,29 @@
 
                 <div class="container">
 
-                    <form action="img?accion=Guardar" method="post" class="form-group">
+                    <form action="imgg" method="post" class="form-group"  enctype="multipart/form-data">
 
                         <label for="lbl_id" >id</label>
                         <input type="number" name="txt_id" id="txt_id" class="form-control"  value="0" readonly>
 
+                        
                         <label for="lbl_nombre" >Nombre</label>
-                        <input type="text" name="txt_nombre" id="txt_nombre" class="form-control"  required>
+                        <div class="form-group">
+                        <input type="text" name="name"  class="form-control"  placeholder="ingrese un nombre" required>
+                        </div>
+                        
                         <br>
+                        
                         <label for="lbl_imagen" >Imagen</label>
-                        <input type="file" name="imagen" id="imagen" >
+                        <div class="form-group">
+                        <input type="flie" name="file"  class="form-control"  placeholder="ingrese una imagen" required>
+                        </div>
                           
                         <br>
                         
-                        <button  name="accion" id="btn_agregar" value="Guardar" class="btn btn-primary">Agregar</button>
-                        
+                        <div class="form-group text-center">
+                            <button class="btn btn-success" name="action" value="add">Registrar imagen</button>
+                        </div>
                         
                         
 

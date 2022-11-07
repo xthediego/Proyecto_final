@@ -56,15 +56,18 @@ public class producto extends HttpServlet {
             }
             
             if("modificar".equals(request.getParameter("btn_modificar"))){
-             if (p.modify()>0){
+             
+             
+                    if(p.modify() > 0){
+
                         out.println("<h1> ingreso exitoso </h1>");
                         out.println("<a href='productos.jsp'>regresar </a>");
-
-             }else{
-             out.println("<h1> xxxxxxx No se modificó correctamente xxxxxxxxxxxx </h1>");
-             out.println("<a href='productos.jsp'>Return...</a>");
-             }
-             }
+                    }else{
+                        out.println("<h1> error .... </h1>");
+                        out.println("<a href='productos.jsp'>regresar </a>");
+                    }
+            }
+            
             
             ///////////codigo del boton eliminar
              if ("eliminar".equals(request.getParameter("btn_eliminar"))){

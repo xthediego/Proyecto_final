@@ -32,7 +32,9 @@
             
         %>
         
-        <h1><center>FORMULARIO CLIENTES</center></h1>   
+        <h1><center>FORMULARIO CLIENTES</center></h1> 
+        <a href="dinamico.jsp">redireccionar a menu</a> 
+        
 
                 <div class="container">
 

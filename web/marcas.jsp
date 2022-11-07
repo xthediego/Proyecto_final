@@ -31,7 +31,10 @@
             
         %> 
         
-        <h1>FORMULARIO MARCAS</h1>  <a href="productos.jsp">redirigirse a productos</a>
+        <h1>FORMULARIO MARCAS</h1>  
+        <a href="productos.jsp">redirigirse a productos</a>
+        <br>
+        <a href="dinamico.jsp">redireccionar a menu</a> 
 
                 <div class="container">
 

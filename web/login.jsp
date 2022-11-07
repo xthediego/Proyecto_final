@@ -63,7 +63,7 @@
                    HttpSession sesion = request.getSession();
                    sesion.setAttribute("user", nombre);
                    sesion.setAttribute("nivel", "1");
-                   response.sendRedirect("main.jsp");
+                   response.sendRedirect("dinamico.jsp");
                    break;
                default:
                    out.write("usuario no existe, o contraseña invalida");

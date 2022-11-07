@@ -6,6 +6,7 @@
 <%@page import="javax.swing.table.DefaultTableModel"%>
 <%@page import="CRUD.Mdetalle1"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page session="true" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,6 +16,21 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <% 
+            HttpSession sesion = request.getSession();
+            String usuario;
+            String nivel;
+            
+            if(sesion.getAttribute("user")!=null && sesion.getAttribute("user")!=null ){
+                usuario = sesion.getAttribute("user").toString();
+                nivel = sesion.getAttribute("nivel").toString();
+                out.print( "<a href='login.jsp?cerrar=true'>"+ usuario +"<h5>Cerrar Sesion</h5></a>  " );
+                
+            }else{
+                out.print(" <script>location.replace('login.jsp'); </script>   ");
+            }
+            
+        %>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
@@ -22,7 +38,10 @@
         <h1>FORMULARIO Maestro_Detalle(1)</h1> 
                 
         <a href="clientes.jsp">redireccionar a formulario clientes</a> 
+        <br>
         <a href="empleado.jsp">redireccionar a formulario empeado</a>
+        <br>
+        <a href="dinamico.jsp">redireccionar a menu</a> 
 
                 <div class="container">
 
@@ -85,7 +104,7 @@
                         <input type="number" name="txt_id_venta_detalle" id="txt_id_venta_detalle" class="form-control" readonly>
                         
                         <label for="lbl_id_ventass" >Id_ventas</label>
-                        <input type="number" name="txt_id_ventass" id="txt_id_ventass" class="form-control" >
+                        <input type="number" name="txt_id_ventass" id="txt_id_ventass" class="form-control" readonly>
                         
                         
                         <label for="lbl_id_producto" >Id_producto</label>
@@ -94,7 +113,7 @@
 
                                     productos f = new productos();
                                     HashMap<String,String> droppa = f.txt_producto();
-                                    for(String i: dropp.keySet()){
+                                    for(String i: droppa.keySet()){
 
                                         out.println("<option value= '" + i + "'>" + droppa.get(i) + "</option> ");
                                     }
@@ -206,7 +225,7 @@
                            $('#txt_fechaingreso').val(fechaingreso);
                            
                            $('#txt_id_venta_detalle').val(id_venta_detalle);
-                           $('#txt_id_ventass').val(id_venta);
+                           $('#txt_id_ventass').val(id_ventas);
                            $('#txt_id_producto').val(id_producto);
                            $('#txt_cantidad').val(cantidad);
                            $('#txt_precio_unitario').val(precio_unitario);

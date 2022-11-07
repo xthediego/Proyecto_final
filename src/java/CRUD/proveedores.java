@@ -180,5 +180,27 @@ public class proveedores {
     
     }
     
+       public HashMap proveedores(){
+        HashMap<String,String> dropp = new HashMap();
+        
+        try{
+            cn = new conexion();
+            String query="SELECT id_proveedores as id,proveedor FROM proveedores;";
+            cn.abrir_conexion();
+            ResultSet consulta = cn.conexionBD.createStatement().executeQuery(query);
+            
+            while(consulta.next()){
+                dropp.put(consulta.getString("id"), consulta.getString("proveedor"));
+        
+            }
+            
+            cn.close_conexion();
+        }catch(SQLException ex){
+                System.out.println(ex.getMessage());
+        }
+        
+        
+        return dropp;
+    }
     
 }

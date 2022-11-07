@@ -44,6 +44,14 @@
         <servlet-name>mdet1</servlet-name>
         <servlet-class>controlador.mdet1</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>imgg</servlet-name>
+        <servlet-class>controlador.imgg</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>mdet2</servlet-name>
+        <servlet-class>controlador.mdet2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>controlador</servlet-name>
         <url-pattern>/controlador</url-pattern>
@@ -87,6 +95,14 @@
     <servlet-mapping>
         <servlet-name>mdet1</servlet-name>
         <url-pattern>/mdet1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>imgg</servlet-name>
+        <url-pattern>/imgg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mdet2</servlet-name>
+        <url-pattern>/mdet2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

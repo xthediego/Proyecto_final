@@ -225,7 +225,7 @@ public class productos {
             parametro.setInt(6,getPrecio_venta());
             parametro.setInt(7,getExistencia());
             parametro.setString(8,getFecha_ingreso());       
-            parametro.setInt(9, this.getId_producto());
+            parametro.setInt(9, getId_producto());
             
            
             int executar = parametro.executeUpdate();

@@ -31,8 +31,11 @@
             
         %>
         
-        <h1><center>FORMULARIO PUESTOS</center> </h1> <a href="empleado.jsp">redirigirse a empleado</a>
-
+        <h1><center>FORMULARIO PUESTOS</center> </h1> 
+        <a href="empleado.jsp">redirigirse a empleado</a>
+        <br> 
+        <a href="dinamico.jsp">redireccionar a menu</a> 
+        
                 <div class="container">
 
                     <form action="puesto" method="post" class="form-group">

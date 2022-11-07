@@ -33,7 +33,10 @@
             
         %>
         
-        <h1><center>FORMULARIO EMPLEADOS</center></h1>   <a href="puesto.jsp">redirigirse a puestos</a>
+        <h1><center>FORMULARIO EMPLEADOS</center></h1>   
+        <a href="puesto.jsp">redirigirse a puestos</a>
+        <br>
+        <a href="dinamico.jsp">redireccionar a menu</a> 
 
                 <div class="container">
 

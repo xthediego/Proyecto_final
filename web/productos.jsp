@@ -33,7 +33,10 @@
             
         %>
         
-        <h1>FORMULARIO Productos</h1>   <a href="marcas.jsp">redirigirse a marcas</a>
+        <h1>FORMULARIO Productos</h1>   
+        <a href="marcas.jsp">redirigirse a marcas</a> 
+        <br>
+        <a href="dinamico.jsp">redireccionar a menu</a> 
 
                 <div class="container">
 
@@ -89,9 +92,11 @@
                         <input type="text" name="txt_fecha_ingreso" id="txt_fecha_ingreso" class="form-control"  required>
 
                         <br>
-                        <button  name="btn_agregar" id="btn_agregar" value="agregar" class="btn btn-primary">agregar</button>                    
-                        <button  name="btn_modificar" id="btn_modificar" value="modificar" class="btn btn-success">Modificar</button>
-                        <button name="btn_eliminar" id="btn_eliminar" value="eliminar" class="btn btn-danger">Eliminar</button> 
+                        <button  name="btn_agregar" id="btn_agregar" value="agregar" class="btn btn-primary">agregar</button> 
+                        
+                        <button  name="btn_modificar" id="btn_modificar" value="modificar" class="btn btn-success">modificar</button>
+                        
+                        <button name="btn_eliminar" id="btn_eliminar" value="eliminar" class="btn btn-danger">eliminar</button> 
                      
                         
                     </form> 
